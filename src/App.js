@@ -1,7 +1,8 @@
 import React, { Fragment, useState } from 'react';
 import Header from './components/Header';
-import Productos from './components/Products';
+import Producto from './components/Products';
 import Footer from './components/Footer';
+import Trolley from './components/Trolley';
 
 function App() {
 
@@ -27,7 +28,7 @@ function App() {
 
       <h3>Listado de Productos</h3>
       {products.map(producto => (
-        <Productos 
+        <Producto 
           key={producto.id}
           producto={producto}
           productos={products}
@@ -35,6 +36,11 @@ function App() {
           agregarCarrito={addTrolley}
         />
       ))}
+
+      <Trolley 
+        carrito={trolley}
+        agregarCarrito={addTrolley}
+      />
 
       <Footer 
         fecha={fecha}
