@@ -13,6 +13,9 @@ function App() {
     { id:3, nombre:'Maquina de Voleadora', precio:2000}
   ]);
 
+  //State para el Carrito
+  const [ trolley, addTrolley ] = useState([]);
+
   // Obtener la fecha
   const fecha = new Date().getFullYear();
 
@@ -27,6 +30,9 @@ function App() {
         <Productos 
           key={producto.id}
           producto={producto}
+          productos={products}
+          carrito={trolley}
+          agregarCarrito={addTrolley}
         />
       ))}
 
